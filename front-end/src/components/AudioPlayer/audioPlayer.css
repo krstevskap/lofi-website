@@ -1,0 +1,22 @@
+.audio-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+}
+
+.controlls {
+    display: flex;
+    gap: 1em;
+}
+
+.controlls button {
+    font-size: 3rem;
+    border: none;
+    background: none;
+    color: #fff;
+}
+.controlls button:hover {
+    cursor: pointer;
+}
