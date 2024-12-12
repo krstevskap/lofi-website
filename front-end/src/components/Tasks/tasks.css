@@ -1,0 +1,52 @@
+.tasks-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+    padding: 1em;
+    height: 300px;
+    background-color: #DCEAF9;
+}
+
+.tasks {
+    overflow: hidden;
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.add-task-container {
+    display: flex;
+    gap: 0.5em;
+    justify-content: space-between;
+    height: 25px;
+}
+
+.add-task-container input {
+    border: none;
+}
+
+.add-task-container button {
+    padding: 0.3em;
+    border: none;
+    background-color: #809BC4;
+    color: #fff;
+}
+
+.add-task-container button:hover {
+    background-color: #5f789e;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #DCEAF9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #809BC4;
+}

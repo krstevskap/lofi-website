@@ -1,0 +1,23 @@
+.task-container {
+    padding: 0.3em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.mark-task {
+    display: flex;
+    gap: 0.3em;
+}
+
+.mark-task input {
+    accent-color: #809BC4;
+}
+
+.delete-button {
+    background: none;
+    color: rgb(152, 0, 0);
+    border: none;
+    font-size: 1rem;
+}
