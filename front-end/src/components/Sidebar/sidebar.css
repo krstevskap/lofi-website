@@ -4,9 +4,9 @@
     align-items: flex-start;
     height: 100%;
     width: 400px;
-    background-color: rgba(240, 255, 255, 0.8);
     position: absolute;
     padding: 1em;
+    background-color: rgba(38, 38, 38, 0.8);
 }
 
 .sidebar-bottom-container {
@@ -19,7 +19,7 @@
 .close-button,
 .arrow-button-container button {
     background: none;
-    color: #809BC4;
+    color: #e2e8f0;
     border: none;
     font-size: 3rem;
     cursor: pointer;

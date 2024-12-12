@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MdDelete } from "react-icons/md";
+import { AiOutlineDelete } from "react-icons/ai";
 import "./task.css";
 
 const Task = ({ id, description, deleteTask }) => {
@@ -22,7 +22,7 @@ const Task = ({ id, description, deleteTask }) => {
         )}
       </div>
       <button onClick={() => deleteTask(id)} className="delete-button">
-        <MdDelete />
+        <AiOutlineDelete />
       </button>
     </div>
   );

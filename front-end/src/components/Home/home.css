@@ -1,8 +1,10 @@
 .homepage-container {
-    --light-mode: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
     min-height: 100vh;
-    background: var(--light-mode);
     display: flex;
     justify-content: center;
     align-items: flex-end;
+    background-image: url('../../assets/night-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }

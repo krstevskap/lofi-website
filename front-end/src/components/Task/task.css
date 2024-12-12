@@ -13,11 +13,17 @@
 
 .mark-task input {
     accent-color: #809BC4;
+    accent-color: #282828;
+    margin-top: 6px;
 }
 
 .delete-button {
     background: none;
-    color: rgb(152, 0, 0);
+    color: #282828;
     border: none;
     font-size: 1rem;
+}
+
+.delete-button:hover{
+    cursor: pointer;
 }

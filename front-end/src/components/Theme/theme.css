@@ -1,0 +1,48 @@
+.theme-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    background-color: #e6eaefc4;
+    padding: 1em;
+    border-radius: 10px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 1.3em;
+}
+
+.theme-container button {
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    opacity: 0.8;
+}
+
+.theme-container button:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.theme1,
+.theme2, 
+.theme3 {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.theme1 {
+    background-image: url('../../assets/night-background-icon.jpg');
+}
+
+.theme2 {
+    background-image: url('../../assets/sunset-background-icon.jpg');
+}
+
+.theme3 {
+    background-image: url('../../assets/mountains-background-icon.jpg');
+}

@@ -43,7 +43,7 @@ const Tasks = () => {
           size="35"
         />
         <button className="add-button" onClick={addNewTask}>
-          Add task
+          Add
         </button>
       </div>
     </div>

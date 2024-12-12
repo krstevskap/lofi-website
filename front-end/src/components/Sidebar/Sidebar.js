@@ -3,8 +3,9 @@ import Tasks from "../Tasks/Tasks";
 import { TiDelete } from "react-icons/ti";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import "./sidebar.css";
+import Theme from "../Theme/Theme";
 
-const Sidebar = () => {
+const Sidebar = ({ changeWallpaper }) => {
   const [isClosed, setIsClosed] = useState(true);
 
   const showHideSidebar = () => {
@@ -29,6 +30,7 @@ const Sidebar = () => {
           </button>
           <div className="sidebar-bottom-container">
             <Tasks />
+            <Theme changeWallpaper={changeWallpaper} />
           </div>
         </div>
       )}

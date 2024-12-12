@@ -1,14 +1,14 @@
 import React from "react";
 import "./home.css";
-
 import AudioPlayer from "../AudioPlayer/AudioPlayer";
-const Home = () => {
+
+const Home = ({ wallpaper }) => {
   return (
-    <div className="homepage-container">
-      <div></div>
-      <div>
-        <AudioPlayer />
-      </div>
+    <div
+      className="homepage-container"
+      style={{ backgroundImage: `url(${wallpaper})` }}
+    >
+      <AudioPlayer />
     </div>
   );
 };
