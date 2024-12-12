@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Task from "../Task/Task";
 import "./tasks.css";
 
 const Tasks = () => {
-  const [tasks, setTasks] = useState([]);
+  const loadTasks = () => {
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  };
+
+  const [tasks, setTasks] = useState(loadTasks);
   const [description, setDescription] = useState("");
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks), [tasks]);
+  });
 
   const addNewTask = (e) => {
     e.preventDefault();

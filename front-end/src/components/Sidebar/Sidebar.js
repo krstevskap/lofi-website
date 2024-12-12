@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Tasks from "../Tasks/Tasks";
-import { TiDelete } from "react-icons/ti";
-import { IoIosArrowDroprightCircle } from "react-icons/io";
-import "./sidebar.css";
 import Theme from "../Theme/Theme";
+import { TiDelete } from "react-icons/ti";
+import { IoMenu } from "react-icons/io5";
+import "./sidebar.css";
 
 const Sidebar = ({ changeWallpaper }) => {
   const [isClosed, setIsClosed] = useState(true);
@@ -13,28 +13,33 @@ const Sidebar = ({ changeWallpaper }) => {
   };
 
   return (
-    <>
-      {isClosed ? (
-        <div
-          className="arrow-button-container"
-          style={{ animationDuration: "500ms" }}
-        >
-          <button onClick={showHideSidebar}>
-            <IoIosArrowDroprightCircle />
+    <div
+      className="sidebar-container"
+      style={{
+        width: isClosed ? "70px" : "375px",
+        overflow: "hidden",
+        transition: "width 300ms ease-in-out",
+      }}
+    >
+      <div className="sidebar-header">
+        {isClosed ? (
+          <button className="menu-button" onClick={showHideSidebar}>
+            <IoMenu />
           </button>
-        </div>
-      ) : (
-        <div className="sidebar-container">
+        ) : (
           <button className="close-button" onClick={showHideSidebar}>
             <TiDelete />
           </button>
-          <div className="sidebar-bottom-container">
-            <Tasks />
-            <Theme changeWallpaper={changeWallpaper} />
-          </div>
+        )}
+      </div>
+
+      {!isClosed && (
+        <div className="sidebar-bottom-container">
+          <Tasks />
+          <Theme changeWallpaper={changeWallpaper} />
         </div>
       )}
-    </>
+    </div>
   );
 };
 
