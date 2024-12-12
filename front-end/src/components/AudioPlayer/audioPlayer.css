@@ -3,7 +3,6 @@
     flex-direction: column;
     align-items: center;
     gap: 1em;
-    padding: 1em;
 }
 
 .controlls {
@@ -15,8 +14,30 @@
     font-size: 3rem;
     border: none;
     background: none;
-    color: #fff;
+    color: #1e1e1e;
 }
+
 .controlls button:hover {
+    cursor: pointer;
+}
+
+.audio-player-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #1e1e1e;
+    background-color: rgba(236, 236, 236, 0.6);
+    border-radius: 10px;
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
+
+.track-details p a {
+    text-decoration: none;
+    font-weight: bold;
+    color: #1e1e1e;
+}
+
+.track-details p a:hover {
     cursor: pointer;
 }

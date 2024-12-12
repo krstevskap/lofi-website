@@ -13,6 +13,8 @@ import track7 from "../../assets/HoliznaCC0 - Windows Down.mp3";
 import "./audioPlayer.css";
 
 const AudioPlayer = () => {
+  const artist = "HoliznaCC0";
+
   const tracks = [
     { id: 1, title: "Blue Skies", src: track1 },
     { id: 2, title: "Kids", src: track2 },
@@ -66,16 +68,26 @@ const AudioPlayer = () => {
         ref={audioRef}
         onEnded={nextSong}
       ></audio>
-      <div className="controlls">
-        <button onClick={previousSong}>
-          <BiSkipPreviousCircle />
-        </button>
-        <button onClick={playPause}>
-          {isPlaying ? <FaRegCirclePause /> : <FaRegPlayCircle />}
-        </button>
-        <button onClick={nextSong}>
-          <BiSkipNextCircle />
-        </button>
+      <div className="audio-player-content">
+        <div className="controlls">
+          <button onClick={previousSong}>
+            <BiSkipPreviousCircle />
+          </button>
+
+          <button onClick={playPause}>
+            {isPlaying ? <FaRegCirclePause /> : <FaRegPlayCircle />}
+          </button>
+
+          <button onClick={nextSong}>
+            <BiSkipNextCircle />
+          </button>
+        </div>
+
+        <div className="track-details">
+          <p>
+            {currentSong.title} -{artist}
+          </p>
+        </div>
       </div>
     </div>
   );
