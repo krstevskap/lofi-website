@@ -3,38 +3,26 @@ import { FaRegPlayCircle } from "react-icons/fa";
 import { BiSkipPreviousCircle } from "react-icons/bi";
 import { BiSkipNextCircle } from "react-icons/bi";
 import { FaRegCirclePause } from "react-icons/fa6";
-import track1 from "../../assets/HoliznaCC0 - Blue Skies.mp3";
-import track2 from "../../assets/HoliznaCC0 - Kids.mp3";
-import track3 from "../../assets/HoliznaCC0 - Laundry On The Wire.mp3";
-import track4 from "../../assets/HoliznaCC0 - Mushrooms.mp3";
-import track5 from "../../assets/HoliznaCC0 - Spring At Last.mp3";
-import track6 from "../../assets/HoliznaCC0 - Waves.mp3";
-import track7 from "../../assets/HoliznaCC0 - Windows Down.mp3";
 import "./audioPlayer.css";
 
-const AudioPlayer = () => {
-  const artist = "HoliznaCC0";
-
-  const tracks = [
-    { id: 1, title: "Blue Skies", src: track1 },
-    { id: 2, title: "Kids", src: track2 },
-    { id: 3, title: "Laundry On The Wire", src: track3 },
-    { id: 4, title: "Mushrooms", src: track4 },
-    { id: 5, title: "Spring At Last", src: track5 },
-    { id: 6, title: "Waves", src: track6 },
-    { id: 7, title: "Windows Down", src: track7 },
-  ];
-
-  const [currentSong, setCurrentSong] = useState(tracks[0]);
+const AudioPlayer = ({ tracks }) => {
+  const [currentSong, setCurrentSong] = useState(null);
   const [isPlaying, setIsPlaying] = useState(false);
-
   const audioRef = useRef();
 
   useEffect(() => {
-    if (isPlaying) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
+    if (tracks.length > 0 && !currentSong) {
+      setCurrentSong(tracks[0]);
+    }
+  }, [tracks, currentSong]);
+
+  useEffect(() => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.play();
+      } else {
+        audioRef.current.pause();
+      }
     }
   }, [isPlaying, currentSong]);
 
@@ -59,10 +47,14 @@ const AudioPlayer = () => {
     setCurrentSong(tracks[nextIndex]);
   };
 
+  if (!currentSong) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="audio-player">
       <audio
-        src={currentSong.src}
+        src={`http://localhost:1337${currentSong.audio_source.url}`}
         preload="metadata"
         type="audio/mpeg"
         ref={audioRef}
@@ -84,9 +76,10 @@ const AudioPlayer = () => {
         </div>
 
         <div className="track-details">
-          <p>
-            {currentSong.title} -{artist}
-          </p>
+          <div>
+            <p>{currentSong.title}</p>
+            <p>{currentSong.artist}</p>
+          </div>
         </div>
       </div>
     </div>
